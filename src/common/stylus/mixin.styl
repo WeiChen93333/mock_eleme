@@ -1,0 +1,30 @@
+border-1px($color)
+  position: relative
+  &::after
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    content ""
+    border-top: 1px solid $color
+
+border-right-1px($color)
+  position: relative
+  &::after
+    position: absolute
+    right: 0
+    height: 100%
+    content ""
+    border-left: 1px solid $color
+
+border-none()
+  &::after
+    display none
+
+bg-image($url)
+  background-image url("img/" + $url + "@2x.png")
+@media (-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3)
+  background-image url("img/" + $url + "@3x.png")
+
+colorMix($color)
+  color $color
